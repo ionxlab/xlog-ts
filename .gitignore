@@ -1,0 +1,12 @@
+node_modules/
+
+.idea/
+out/
+*.iml
+*.iws
+.vscode/
+
+logs/
+*.log
+
+.env
