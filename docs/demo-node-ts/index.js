@@ -1,0 +1,13 @@
+"use strict";
+exports.__esModule = true;
+var xlog_ts_1 = require("xlog-ts");
+var Logs = new xlog_ts_1.LogManager("demo");
+var Log = Logs.getLogger("fn1", xlog_ts_1.LogLevel.VERBOSE, true);
+Log.raw("Raw");
+Log.m("Message");
+Log.e("Error");
+Log.w("Warning");
+Log.i("Info");
+Log.d("Debug");
+Log.v("Verbose");
+Log.iS("Info with Stack:");
