@@ -9,14 +9,7 @@ export class Logger {
   private tag: string = null;
   private config: LogConfig = new LogConfig();
   private level: LogLevel = LogLevel.VERBOSE;
-  private static readonly consoles: Map<LogLevel, string> = new Map<LogLevel, string>([
-    [LogLevel.MESSAGE, "log"],
-    [LogLevel.ERROR, "error"],
-    [LogLevel.WARNING, "warn"],
-    [LogLevel.INFO, "info"],
-    [LogLevel.DEBUG, "debug"],
-    [LogLevel.VERBOSE, "debug"]
-  ]);
+  private static readonly consoles: string[] = ["log","error","warn","info","debug","debug"];
   private static readonly levels: string[] = ['m','e','w','i','d','v'];
 
   /**
@@ -104,7 +97,7 @@ export class Logger {
         argsOut.push("\n"+s);
       }
 
-      console[Logger.consoles.get(level)].apply(console, argsOut);
+      console[Logger.consoles[level]].apply(console, argsOut);
     }
   }
 
