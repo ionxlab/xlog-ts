@@ -46,10 +46,10 @@ declare module 'xlog-ts/Logger' {
        * Construct a Logger
        * @param {string} name
        * @param {string} tag
-       * @param {LogConfig} config
        * @param {LogLevel} level
+       * @param {LogConfig} config
        */
-      constructor(name?: string, tag?: string, config?: LogConfig, level?: LogLevel);
+      constructor(name?: string, tag?: string, level?: LogLevel, config?: LogConfig);
       /**
        * Get log level
        * @return {LogLevel}
@@ -163,18 +163,18 @@ declare module 'xlog-ts/LogManager' {
       /**
        * Construct a LogManager
        * @param {string} name
-       * @param {LogConfig} config
        * @param {LogLevel} level
+       * @param {LogConfig} config
        */
-      constructor(name?: string, config?: LogConfig, level?: LogLevel);
+      constructor(name?: string, level?: LogLevel, config?: LogConfig);
       /**
        * Return an instance of Logger
        * @param {string} tag
        * @param {LogLevel} level
-       * @param force
+       * @param {boolean} override
        * @return {Logger}
        */
-      getLogger(tag: string, level?: LogLevel, force?: boolean): Logger;
+      getLogger(tag: string, level?: LogLevel, override?: boolean): Logger;
       /**
        * Set log level
        * @param {LogLevel} level - the log level

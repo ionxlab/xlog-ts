@@ -16,18 +16,18 @@ export class Logger {
    * Construct a Logger
    * @param {string} name
    * @param {string} tag
-   * @param {LogConfig} config
    * @param {LogLevel} level
+   * @param {LogConfig} config
    */
-  constructor(name?: string, tag?: string, config?: LogConfig, level?: LogLevel) {
+  constructor(name?: string, tag?: string, level?: LogLevel, config?: LogConfig) {
     if(name != null)
       this.name = name;
     if(tag != null)
       this.tag = tag;
-    if(config != null)
-      this.config = config;
     if(level != null)
       this.level = level;
+    if(config != null)
+      this.config = config;
   }
 
   /**

@@ -15,28 +15,28 @@ export class LogManager {
   /**
    * Construct a LogManager
    * @param {string} name
-   * @param {LogConfig} config
    * @param {LogLevel} level
+   * @param {LogConfig} config
    */
-  constructor(name?: string, config?: LogConfig, level?: LogLevel) {
+  constructor(name?: string, level?: LogLevel, config?: LogConfig) {
     if(name != null)
       this.name = name;
-    if(config != null)
-      this.config = config;
     if(level != null)
       this.level = level;
+    if(config != null)
+      this.config = config;
   }
 
   /**
    * Return an instance of Logger
    * @param {string} tag
    * @param {LogLevel} level
-   * @param force
+   * @param {boolean} override
    * @return {Logger}
    */
-  getLogger(tag: string, level?: LogLevel, force?: boolean): Logger {
-    if(!this.loggers.has(tag) || force)
-      this.loggers.set(tag, new Logger(this.name, tag, this.config, (level!==null ? level : this.level)));
+  getLogger(tag: string, level?: LogLevel, override?: boolean): Logger {
+    if(!this.loggers.has(tag) || override)
+      this.loggers.set(tag, new Logger(this.name, tag, (level!==null ? level : this.level), this.config));
 
     return this.loggers.get(tag);
   };

@@ -97,31 +97,31 @@ class LogManager {
     /**
      * Construct a LogManager
      * @param {string} name
-     * @param {LogConfig} config
      * @param {LogLevel} level
+     * @param {LogConfig} config
      */
-    constructor(name, config, level) {
+    constructor(name, level, config) {
         this.name = null;
         this.config = new LogConfig_1.LogConfig();
         this.level = LogLevel_1.LogLevel.VERBOSE;
         this.loggers = new Map();
         if (name != null)
             this.name = name;
-        if (config != null)
-            this.config = config;
         if (level != null)
             this.level = level;
+        if (config != null)
+            this.config = config;
     }
     /**
      * Return an instance of Logger
      * @param {string} tag
      * @param {LogLevel} level
-     * @param force
+     * @param {boolean} override
      * @return {Logger}
      */
-    getLogger(tag, level, force) {
-        if (!this.loggers.has(tag) || force)
-            this.loggers.set(tag, new Logger_1.Logger(this.name, tag, this.config, (level !== null ? level : this.level)));
+    getLogger(tag, level, override) {
+        if (!this.loggers.has(tag) || override)
+            this.loggers.set(tag, new Logger_1.Logger(this.name, tag, (level !== null ? level : this.level), this.config));
         return this.loggers.get(tag);
     }
     ;
@@ -174,10 +174,10 @@ class Logger {
      * Construct a Logger
      * @param {string} name
      * @param {string} tag
-     * @param {LogConfig} config
      * @param {LogLevel} level
+     * @param {LogConfig} config
      */
-    constructor(name, tag, config, level) {
+    constructor(name, tag, level, config) {
         this.name = null;
         this.tag = null;
         this.config = new LogConfig_1.LogConfig();
@@ -186,10 +186,10 @@ class Logger {
             this.name = name;
         if (tag != null)
             this.tag = tag;
-        if (config != null)
-            this.config = config;
         if (level != null)
             this.level = level;
+        if (config != null)
+            this.config = config;
     }
     /**
      * Get log level
@@ -249,7 +249,7 @@ class Logger {
                 }
                 argsOut.push("\n" + s);
             }
-            console[Logger.consoles.get(level)].apply(console, argsOut);
+            console[Logger.consoles[level]].apply(console, argsOut);
         }
     }
     // ==========================================================================
@@ -348,14 +348,7 @@ class Logger {
     }
 }
 exports.Logger = Logger;
-Logger.consoles = new Map([
-    [LogLevel_1.LogLevel.MESSAGE, "log"],
-    [LogLevel_1.LogLevel.ERROR, "error"],
-    [LogLevel_1.LogLevel.WARNING, "warn"],
-    [LogLevel_1.LogLevel.INFO, "info"],
-    [LogLevel_1.LogLevel.DEBUG, "debug"],
-    [LogLevel_1.LogLevel.VERBOSE, "debug"]
-]);
+Logger.consoles = ["log", "error", "warn", "info", "debug", "debug"];
 Logger.levels = ['m', 'e', 'w', 'i', 'd', 'v'];
 
 

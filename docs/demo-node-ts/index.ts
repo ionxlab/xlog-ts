@@ -4,8 +4,8 @@ import { LogConfig, LogLevel, LogManager, Logger } from 'xlog-ts';
 const logConfig = new LogConfig();
 logConfig.printDate = false;
 
-const Logs = new LogManager("demo", logConfig, LogLevel.VERBOSE);
-const Log = Logs.getLogger("fn1", LogLevel.WARNING, true); // predefined VERBOSE level overriden to WARNING
+const Logs = new LogManager("demo", LogLevel.VERBOSE, logConfig);
+const Log = Logs.getLogger("fn1", LogLevel.WARNING, true); // inherited VERBOSE level overriden to WARNING
 
 Log.raw("Raw");
 Log.m("Message");
