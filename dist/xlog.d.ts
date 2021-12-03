@@ -68,67 +68,67 @@ declare module 'xlog-ts/Logger' {
        * Log with message level
        * @param {...string} args
        */
-      m(args: any): void;
+      m(...args: any[]): void;
       /**
        * Log with error level
        * @param {...string} args
        */
-      e(args: any): void;
+      e(...args: any[]): void;
       /**
        * Log with warning level
        * @param {...string} args
        */
-      w(args: any): void;
+      w(...args: any[]): void;
       /**
        * Log with info level
        * @param {...string} args
        */
-      i(args: any): void;
+      i(...args: any[]): void;
       /**
        * Log with debug level
        * @param {...string} args
        */
-      d(args: any): void;
+      d(...args: any[]): void;
       /**
        * Log with verbose level
        * @param {...string} args
        */
-      v(args: any): void;
+      v(...args: any[]): void;
       /**
        * Log with message level and callstack
        * @param {...string} args
        */
-      mS(args: any): void;
+      mS(...args: any[]): void;
       /**
        * Log with error level and callstack
        * @param {...string} args
        */
-      eS(args: any): void;
+      eS(...args: any[]): void;
       /**
        * Log with warning level and callstack
        * @param {...string} args
        */
-      wS(args: any): void;
+      wS(...args: any[]): void;
       /**
        * Log with info level and callstack
        * @param {...string} args
        */
-      iS(args: any): void;
+      iS(...args: any[]): void;
       /**
        * Log with debug level and callstack
        * @param {...string} args
        */
-      dS(args: any): void;
+      dS(...args: any[]): void;
       /**
        * Log with verbose level and callstack
        * @param {...string} args
        */
-      vS(args: any): void;
+      vS(...args: any[]): void;
       /**
        * Log raw message (equivalent to console.log)
        * @param {...string} args
        */
-      raw(args: any): void;
+      raw(...args: any[]): void;
   }
 
 }
