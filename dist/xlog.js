@@ -113,6 +113,20 @@ class LogManager {
             this.config = config;
     }
     /**
+     * Get the singleton instance of a LogManager
+     * @param {string} name
+     * @param {LogLevel} level
+     * @param {LogConfig} config
+     * @param {boolean} override
+     * @return {LogManager}
+     */
+    static getInstance(name, level, config, override) {
+        if (LogManager.instance === null || override) {
+            LogManager.instance = new LogManager(name, level, config);
+        }
+        return LogManager.instance;
+    }
+    /**
      * Return an instance of Logger
      * @param {string} tag
      * @param {LogLevel} level
@@ -154,6 +168,7 @@ class LogManager {
     ;
 }
 exports.LogManager = LogManager;
+LogManager.instance = null;
 
 
 /***/ }),

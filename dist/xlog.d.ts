@@ -160,6 +160,7 @@ declare module 'xlog-ts/LogManager' {
       private config;
       private level;
       private loggers;
+      private static instance;
       /**
        * Construct a LogManager
        * @param {string} name
@@ -167,6 +168,15 @@ declare module 'xlog-ts/LogManager' {
        * @param {LogConfig} config
        */
       constructor(name?: string, level?: LogLevel, config?: LogConfig);
+      /**
+       * Get the singleton instance of a LogManager
+       * @param {string} name
+       * @param {LogLevel} level
+       * @param {LogConfig} config
+       * @param {boolean} override
+       * @return {LogManager}
+       */
+      static getInstance(name?: string, level?: LogLevel, config?: LogConfig, override?: boolean): LogManager;
       /**
        * Return an instance of Logger
        * @param {string} tag

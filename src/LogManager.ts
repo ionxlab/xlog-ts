@@ -11,6 +11,7 @@ export class LogManager {
   private config: LogConfig = new LogConfig();
   private level: LogLevel = LogLevel.VERBOSE;
   private loggers: Map<string, Logger> = new Map<string, Logger>();
+  private static instance: LogManager = null;
 
   /**
    * Construct a LogManager
@@ -25,6 +26,21 @@ export class LogManager {
       this.level = level;
     if(config != null)
       this.config = config;
+  }
+
+  /**
+   * Get the singleton instance of a LogManager
+   * @param {string} name
+   * @param {LogLevel} level
+   * @param {LogConfig} config
+   * @param {boolean} override
+   * @return {LogManager}
+   */
+  static getInstance(name?: string, level?: LogLevel, config?: LogConfig, override?: boolean): LogManager {
+    if(LogManager.instance===null || override) {
+      LogManager.instance = new LogManager(name, level, config);
+    }
+    return LogManager.instance;
   }
 
   /**
