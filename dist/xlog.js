@@ -272,93 +272,106 @@ class Logger {
     // ==========================================================================
     /**
      * Log with message level
+     * @param {any} arg
      * @param {...string} args
      */
-    m(...args) {
+    m(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.MESSAGE, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with error level
+     * @param {any} arg
      * @param {...string} args
      */
-    e(...args) {
+    e(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.ERROR, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with warning level
+     * @param {any} arg
      * @param {...string} args
      */
-    w(...args) {
+    w(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.WARNING, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with info level
+     * @param {any} arg
      * @param {...string} args
      */
-    i(...args) {
+    i(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.INFO, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with debug level
+     * @param {any} arg
      * @param {...string} args
      */
-    d(...args) {
+    d(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.DEBUG, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with verbose level
+     * @param {any} arg
      * @param {...string} args
      */
-    v(...args) {
+    v(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.VERBOSE, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments));
     }
     /**
      * Log with message level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    mS(...args) {
+    mS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.MESSAGE, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log with error level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    eS(...args) {
+    eS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.ERROR, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log with warning level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    wS(...args) {
+    wS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.WARNING, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log with info level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    iS(...args) {
+    iS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.INFO, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log with debug level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    dS(...args) {
+    dS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.DEBUG, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log with verbose level and callstack
+     * @param {any} arg
      * @param {...string} args
      */
-    vS(...args) {
+    vS(arg, ...args) {
         Logger.log(LogLevel_1.LogLevel.VERBOSE, this.level, this.name, this.tag, this.config, Array.prototype.slice.call(arguments), true);
     }
     /**
      * Log raw message (equivalent to console.log)
+     * @param {any} arg
      * @param {...string} args
      */
-    raw(...args) {
+    raw(arg, ...args) {
         console.log.apply(console, Array.prototype.slice.call(arguments));
     }
 }
