@@ -1,8 +1,8 @@
 declare module 'xlog-ts/index' {
-  export * from 'xlog-ts/LogManager';
-  export * from 'xlog-ts/Logger';
-  export * from 'xlog-ts/LogConfig';
-  export * from 'xlog-ts/LogLevel';
+  export { LogManager } from 'xlog-ts/LogManager';
+  export { Logger } from 'xlog-ts/Logger';
+  export { LogConfig } from 'xlog-ts/LogConfig';
+  export { LogLevel } from 'xlog-ts/LogLevel';
 
 }
 declare module 'xlog-ts/LogConfig' {

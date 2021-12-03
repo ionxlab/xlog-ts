@@ -352,29 +352,6 @@ Logger.consoles = ["log", "error", "warn", "info", "debug", "debug"];
 Logger.levels = ['m', 'e', 'w', 'i', 'd', 'v'];
 
 
-/***/ }),
-
-/***/ 607:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__webpack_require__(563), exports);
-__exportStar(__webpack_require__(530), exports);
-__exportStar(__webpack_require__(352), exports);
-__exportStar(__webpack_require__(647), exports);
-
-
 /***/ })
 
 /******/ 	});
@@ -397,19 +374,31 @@ __exportStar(__webpack_require__(647), exports);
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__(607);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+var exports = __webpack_exports__;
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.LogLevel = exports.LogConfig = exports.Logger = exports.LogManager = void 0;
+var LogManager_1 = __webpack_require__(563);
+Object.defineProperty(exports, "LogManager", ({ enumerable: true, get: function () { return LogManager_1.LogManager; } }));
+var Logger_1 = __webpack_require__(530);
+Object.defineProperty(exports, "Logger", ({ enumerable: true, get: function () { return Logger_1.Logger; } }));
+var LogConfig_1 = __webpack_require__(352);
+Object.defineProperty(exports, "LogConfig", ({ enumerable: true, get: function () { return LogConfig_1.LogConfig; } }));
+var LogLevel_1 = __webpack_require__(647);
+Object.defineProperty(exports, "LogLevel", ({ enumerable: true, get: function () { return LogLevel_1.LogLevel; } }));
+
+})();
+
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

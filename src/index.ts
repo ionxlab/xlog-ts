@@ -1,5 +1,5 @@
 
-export * from './LogManager';
-export * from './Logger';
-export * from './LogConfig';
-export * from './LogLevel';
+export { LogManager } from './LogManager';
+export { Logger } from './Logger';
+export { LogConfig } from './LogConfig';
+export { LogLevel } from './LogLevel';
